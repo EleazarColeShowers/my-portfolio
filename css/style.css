@@ -1,37 +1,60 @@
-*{
+* {
     margin: 0;
+    padding: 0;
     text-decoration: none;
     font-family: sans-serif;
+    background-color: black;
+    color: white;
 }
-.nav-list {
-    list-style-type: none;
-    text-decoration: none;
-}
-.navbar{
+
+.navbar {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     position: fixed;
-    /* border: 1px solid black; */
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    z-index: 10;
 }
-@media(max-width:600px){
-    .navbar{
-        display: flex;
-        flex-direction: row;
+
+#logo {
+    width: 20%;
+}
+
+.nav-lnks ul {
+    display: flex;  
+    list-style-type: none;  
+    margin: 0;
+    padding: 0;
+}
+
+.nav-lnks ul li {
+    margin-left: 20px;  
+}
+
+.nav-lnks ul li a {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
     }
-    #logo{
-        display: flex;
-        width: 10%;
+
+    #logo {
+        margin-bottom: 10px;
     }
-    .nav-lnks{
-        display: flex;
-        flex-direction: row;
-        width: 40%;
-        justify-content: flex-end;
-        margin-top: auto;
-        margin-bottom: auto;
+
+    .nav-lnks ul {
+        flex-direction: column;  
     }
-    a{
-        color: red;
+
+    .nav-lnks ul li {
+        margin: 10px 0;
     }
 }
 
@@ -63,54 +86,48 @@ nav{
 .nav-lnks>ul>li{
     padding-left: 10px;
     padding-right: 10px;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .name-int{
     padding: 300px; 
     font-size: 20px; 
     font-family: sans-serif;
-   
+    color: white;
 }
 
 
-#home-container{
+#home-container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-   
-    
-    
-}
-/* .home-content{
-    flex-grow: 2;
-    width: 50%;
-    max-width: 50%;
-    height: 100vh;
-    background-color: rgb(0, 0, 255);
-} */
-
-#home-text{
-    margin: 0;
     position: relative;
-    background-color: rgb(255, 255, 255);
     height: 750px;
-    width: 65%;
-    z-index: -1;
-    top: 20px; /* adjust the value to control the overlap */
+    background-color: black;
+}
+
+#home-text {
+    position: relative;
+    width: 64%;
+    z-index: 1;
+    top: 20px; /* Adjust this to control vertical position */
     left: 100px; 
     transform-origin: 10 10;
     transform: skew(-15deg);
-    
+    background-color: rgb(0, 0, 0);
+    margin-bottom: -20px; /* Overlap adjustment */
 }
 
-#home-picture{
-    margin: 0;
+#home-picture {
     position: relative;
-    padding-top: 20px;
-    width: 35%;
-    z-index: -2;
+    width: 36%;
+    z-index: 0; /* Send the image behind the text */
+    margin-left: -30px; /* Adjust this to overlap the text slightly */
+}
+
+#home-picture img {
+    width: 100%;
+    height: 100%;
+    /* Clip the top of the image for a slanted effect */
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
 }
 
 /* section links */
@@ -134,8 +151,8 @@ nav{
 }
 /* section lottie */
 #lottie-content{
-    background-image: url("/images/portbg.jpg");
-    background-repeat: no-repeat;
+    /* background-color: black;  */
+    background: linear-gradient(to bottom, #000000, #292929);
     background-size: cover;
     align-items: center;
     border: 1px solid black;
@@ -150,4 +167,38 @@ nav{
     font-weight: bold;
     font-style: italic;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+#about-me {
+    background-color: black; /* Keep consistent with the portfolio theme */
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-me-container {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    border: 2px solid #292929; /* Subtle border for aesthetic */
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #1a1a1a; /* Slightly lighter shade for distinction */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+#about-me h2 {
+    font-family: 'Comforter', cursive;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #9c27b0; /* Purple accent color */
+}
+
+#about-me p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #dcdcdc; /* Softer white for readability */
 }
