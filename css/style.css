@@ -172,7 +172,7 @@ nav{
 
 
 #about-me {
-    background-color: black; /* Keep consistent with the portfolio theme */
+    /* background-color: black;  */
     color: white;
     padding: 50px 20px;
     text-align: center;
@@ -186,8 +186,8 @@ nav{
     border: 2px solid #292929; /* Subtle border for aesthetic */
     border-radius: 10px;
     padding: 30px;
-    background-color: #1a1a1a; /* Slightly lighter shade for distinction */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
+    /* background-color: #1a1a1a;  */
+    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6); */
 }
 
 #about-me h2 {
@@ -204,7 +204,7 @@ nav{
 }
 
 #skills {
-    background-color: black; /* Keep consistent with the portfolio theme */
+    /* background-color: black;  */
     color: white;
     padding: 50px 20px;
     text-align: center;
@@ -217,8 +217,8 @@ nav{
     border: 2px solid #292929; /* Subtle border for distinction */
     border-radius: 10px;
     padding: 30px;
-    background-color: #1a1a1a; /* Slightly lighter shade for distinction */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
+    /* background-color: #1a1a1a;  */
+    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6); */
 }
 
 #skills h2 {
@@ -236,17 +236,17 @@ nav{
 }
 
 .skill {
-    background-color: #292929;
+    /* background-color: #292929; */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); */
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .skill:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.6);
+    /* box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.6); */
 }
 
 .skill h3 {
