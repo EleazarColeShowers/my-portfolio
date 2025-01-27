@@ -5,6 +5,9 @@
     font-family: sans-serif;
     color: white;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin-left: 250px; /* Matches the sidebar width */
 }.sidebar {
@@ -66,7 +69,6 @@ body {
     justify-content: space-between; /* Add space between text and image */
     position: relative;
     height: 750px;
-    /* background-color: black; */
     width: 90%; /* Set a specific width */
     max-width: 1200px; /* Limit maximum width */
     padding: 20px; /* Add spacing inside the container */
@@ -85,63 +87,100 @@ body {
     width: 40%; /* Adjust the width for balance */
     max-width: 400px; /* Set a maximum width for the image */
     aspect-ratio: 1 / 1; /* Maintain a square aspect ratio */
-    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); /* Trapezium shape */
     overflow: hidden; /* Hide overflow outside the clip-path */
+    position: relative; /* Ensure the image stays fixed inside */
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); /* Initial trapezium shape */
+    animation: cornerWave 3s infinite ease-in-out; /* Subtle wave effect on corners */
 }
 
 #home-picture img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    width: 100%; /* Let the image take the full width of the container */
+    height: 100%; /* Keep the height consistent */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    position: absolute; /* Keep the image fixed in place */
+    top: 0;
+    left: 0;
+    transform: none; /* Ensure no movement for the image itself */
     border-radius: 10px;
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    transform: scale(0.9); /* Start slightly zoomed out */
     opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-in-out; /* Smooth fade-in */
+}
+
+@keyframes cornerWave {
+    0% {
+        clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+    }
+    25% {
+        clip-path: polygon(12% 2%, 98% 0, 88% 98%, 0% 102%);
+    }
+    50% {
+        clip-path: polygon(8% 0, 102% 2%, 92% 102%, -2% 98%);
+    }
+    75% {
+        clip-path: polygon(9% -1%, 101% 1%, 91% 101%, 1% 100%);
+    }
+    100% {
+        clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+    }
 }
 
 #home-picture img.visible {
-    transform: scale(1); /* Zoom in to normal size */
-    opacity: 1; /* Fully visible */
+    opacity: 1; /* Fully visible after fade-in */
 }
 /* section links */
+#contact-content {
+    text-align: center;
+    background-color: #f7f7f7; /* Off-white background */
+    padding: 50px 20px;
+    border-radius: 8px;
+}
 
-.links ul{
-    display: grid;
-    padding:20px;
-    /* to specify the spacing in the grid */
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    grid-template-columns: 200px 200px auto;
-    justify-content: center;
+#contact-text h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
 }
-.links  li{
-    margin: 200px;
-    list-style: none;
 
+ul {
+    list-style-type: none;
+    padding: 0;
 }
-.links>li>a{
-    text-decoration: none;
+
+ul li {
+    margin: 10px 0;
 }
-/* section lottie */
-#lottie-content{
-    /* background-color: black;  */
-    background: linear-gradient(to bottom, #000000, #292929);
-    background-size: cover;
+
+ul li a {
+    display: flex;
     align-items: center;
-    border: 1px solid black;
-    width: 100%;
-    height: 100vh;
-}
-#lottietext>h1{
-    font-size: 40px;
-    color: white;
-    margin: auto;
-    width: 800px;
-    font-weight: bold;
-    font-style: italic;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 12px;
+    background-color: #fff;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    margin: 10px auto;
 }
 
+ul li a:hover {
+    background-color: #e2e2e2;
+    color: #4c4c4c;
+}
+
+ul li svg {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    fill: #4c4c4c;
+}
+
+ul li a:hover svg {
+    fill: #333;
+}
 /* Section Styling */
 #about-me {
     color: black; /* Change text color to black for contrast */
