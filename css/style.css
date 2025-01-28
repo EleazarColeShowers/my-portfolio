@@ -3,7 +3,7 @@
     padding: 0;
     text-decoration: none;
     font-family: sans-serif;
-    color: white;
+    color: rgba(255, 255, 255, 0.8);
 }
 html {
     scroll-behavior: smooth;
@@ -33,7 +33,7 @@ body {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid white; /* Optional: adds a white border around the image */
+    /* border: 2px solid white;  */
 }
 
 .nav-lnks ul {
@@ -130,7 +130,7 @@ body {
 /* section links */
 #contact-content {
     text-align: center;
-    background-color: #f7f7f7; /* Off-white background */
+    background-color: rgba(255, 255, 255, 0.8); /* Off-white background */
     padding: 50px 20px;
     border-radius: 8px;
 }
@@ -187,7 +187,7 @@ ul li a:hover svg {
     padding: 50px 20px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* White and off-white gradient */
+    background: rgba(255, 255, 255, 0.8); /* White and off-white gradient */
     overflow: hidden;
     position: relative;
 }
@@ -309,7 +309,7 @@ ul li a:hover svg {
     padding: 50px 20px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* White and off-white gradient */
+    background: rgba(255, 255, 255, 0.8); /* White and off-white gradient */
 }
 
 /* Container for the Skills */
@@ -487,5 +487,37 @@ ul li a:hover svg {
 
     .contact-container p {
         font-size: 16px;
+    }
+}
+
+.floating-balls::before,
+.floating-balls::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(169, 169, 169, 0.5); /* Grey color with transparency */
+    border-radius: 50%;
+    animation: float 10s infinite ease-in-out;
+    z-index: 1;
+}
+
+.floating-balls::before {
+    top: -50px;
+    left: -50px;
+}
+
+.floating-balls::after {
+    bottom: -50px;
+    right: -50px;
+}
+
+/* Keyframes for Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(20px, -20px);
     }
 }
