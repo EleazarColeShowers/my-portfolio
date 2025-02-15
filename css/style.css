@@ -124,6 +124,23 @@ body {
     }
 }
 
+.download-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #6a0dad; /* Purple */
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 15px; /* Adds space below the title */
+}
+
+.download-btn:hover {
+    background-color: #5a009a; /* Darker purple on hover */
+}
+
 #home-picture img.visible {
     opacity: 1; /* Fully visible after fade-in */
 }
