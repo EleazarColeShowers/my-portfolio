@@ -443,6 +443,56 @@ ul li a:hover svg {
 .project:hover {
     transform: scale(1.05);
 }
+.hobby-section {
+    background-color: #1e1e2e;
+    color: #d1d1e9;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hobby-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.hobby-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hobby-section li {
+    background-color: #312d4b;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hobby-section li:hover {
+    transform: scale(1.05);
+    background-color: #5e5a8a;
+}
+
+#shuffle-hobbies {
+    margin-top: 15px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6a5acd;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+#shuffle-hobbies:hover {
+    background-color: #4b42a1;
+}
+
 /* Contact Section */
 .contact-section {
     display: flex;

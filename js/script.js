@@ -60,3 +60,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(skillsSection);
 });
+
+document.getElementById("shuffle-hobbies").addEventListener("click", function() {
+    let hobbyList = document.getElementById("hobby-list");
+    let hobbies = Array.from(hobbyList.children);
+    
+    hobbies.sort(() => Math.random() - 0.5);
+    
+    hobbyList.innerHTML = "";
+    hobbies.forEach(hobby => hobbyList.appendChild(hobby));
+});
