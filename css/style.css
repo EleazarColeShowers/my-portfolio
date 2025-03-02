@@ -10,7 +10,15 @@ html {
 }
 body {
     margin-left: 250px; /* Matches the sidebar width */
-}.sidebar {
+    background-image: url('/images/backgroundimagee.jpg'); 
+    background-size: 100% 100%; /* Makes the image stretch to fit the available space */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -62,27 +70,47 @@ body {
 }
 
 #home-container {
-    margin: 0 auto; /* Center the container */
-    display: flex; /* Use flexbox */
-    flex-direction: row; /* Arrange items side by side */
-    align-items: center; /* Vertically center content */
-    justify-content: space-between; /* Add space between text and image */
     position: relative;
-    height: 750px;
-    width: 90%; /* Set a specific width */
-    max-width: 1200px; /* Limit maximum width */
-    padding: 20px; /* Add spacing inside the container */
-    gap: 20px; /* Add spacing between text and image */
+    height: 100vh; /* Full viewport height */
+    width: calc(100vw - 250px); /* Full width minus sidebar */
+    background-image: url('images/secondportfolioimage.jpeg'); /* Replace with your actual image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column; /* Stack content */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }
-
 #home-text {
-    text-align: left; /* Align text to the left */
-    width: 50%; /* Take 50% of the container width */
-    max-width: 600px; /* Limit the maximum width of the text */
-    color: black;
-    z-index: 1;
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 2;
 }
 
+.download-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #6a0dad; /* Purple */
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.download-btn:hover {
+    background-color: #5a009a; /* Darker purple on hover */
+}
 #home-picture {
     width: 40%; /* Adjust the width for balance */
     max-width: 400px; /* Set a maximum width for the image */
@@ -124,26 +152,6 @@ body {
     }
 }
 
-.download-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    background-color: #6a0dad; /* Purple */
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease-in-out;
-    margin-top: 15px; /* Adds space below the title */
-}
-
-.download-btn:hover {
-    background-color: #5a009a; /* Darker purple on hover */
-}
-
-#home-picture img.visible {
-    opacity: 1; /* Fully visible after fade-in */
-}
 /* section links */
 #contact-content {
     text-align: center;
